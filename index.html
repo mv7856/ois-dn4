@@ -2,15 +2,75 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>EHRaplikacija</title>
+    <title>MyHealth</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="jea.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
 
 </head>
-<body>
+    <script>
+// Note: This example requires that you consent to location sharing when
+// prompted by your browser. If you see a blank space instead of the map, this
+// is probably because you have denied permission for location sharing.
+
+var map;
+
+function initialize() {
+  var mapOptions = {
+    zoom: 6
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  // Try HTML5 geolocation
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
+
+      var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: pos,
+        content: 'Location found using HTML5.'
+      });
+
+      map.setCenter(pos);
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+}
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    var content = 'Error: The Geolocation service failed.';
+  } else {
+    var content = 'Error: Your browser doesn\'t support geolocation.';
+  }
+
+  var options = {
+    map: map,
+    position: new google.maps.LatLng(60, 105),
+    content: content
+  };
+
+  var infowindow = new google.maps.InfoWindow(options);
+  map.setCenter(options.position);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+
+<body background="wallpaper.jpg">
     <div class="navbar navbar-inverse navbar-static-top">
     	<div class="container">
     		<div class="navbar-header">
@@ -24,14 +84,39 @@
 	  			<div class="collapse navbar-collapse navHeaderCollapse">
 	  				<ul class="nav navbar-nav navbar-right">
 	  					<li class="active"><a href="#">Home</a></li>
-	  					<li><a href="#">Login</a></li>
-	  					<li><a href="#">MyData</a></li>
-	  					<li><a href="#">Edit</a></li>
-	  					<li><a href="#">Analyse</a></li>
+	  					<li><a href="login.html">Login</a></li>
+	  					<li><a href="mydata.html">MyData</a></li>
+	  					<li><a href="edit.html">Edit</a></li>
+	  					<li><a href="analyse.html">Analyse</a></li>
 	  				</ul>
 	  			</div>
 	  		
-  	</div>
+  		</div>
+    </div>
+
+    <div class="container">
+    	<div class="jumbotron">
+    		<h1 class="text-center">Welcome to MyHealth !</h1>
+    		<p class="text-center">We put a lot of effort to build this app just for you. MyHealth is one of the fastest growing companies on this planet. Just login and be part of the greatest community for health care.</p>
+    		<center><a href="https://dev.ehrscape.com/" class="btn btn-default">About platform</a>
+    		<a href="login.html" class="btn btn-danger">Login</a></center
+    	</div>
+    </div>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-6">
+    			<h3>Geolocation</h3>
+    			<div id="mapa"></div>
+    		</div>
+    	</div>
+    </div>
+
+     <div class="navbar navbar-default navbar-fixed-bottom">
+    	<div class="container">
+    		<p class="navbar-text pull-left">Site built by @myHealth</p>
+    		<a href="https://www.facebook.com/sharer/sharer.php?app_id=309437425817038&u=http%3A%2F%2Fmv7856.github.io%2Fois-dn4%2F&display=popup&ref=plugin" target="_blank" class="navbar-btn btn-primary btn pull-right">Share on facebook</a>
+    	</div>
     </div>
 </body>
 </html>
