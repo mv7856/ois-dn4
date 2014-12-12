@@ -1,3 +1,12 @@
 .jumbotron {
 	opacity: 0.93;
 }
+
+#spodnji{
+	opacity: 0.96;
+	background: #C3C3C2
+}
+
+body {
+	margin-bottom: 100px;
+}
