@@ -15,8 +15,8 @@ body {
 	background-size: cover;
  	background-repeat: no-repeat;
   	background-attachment: fixed;
+  	position:fixed;
   	display: compact;
-	
 }
 
 .glavniBody { background-image: url("wallpaper6.jpg");}
