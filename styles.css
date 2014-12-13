@@ -19,11 +19,11 @@ body {
 	
 }
 
-.glavniBody { background-image: url("wallpaper6.jpg") center;}
-.loginBody { background-image: url("wallpaper1.jpg") center}
-.mydataBody { background-image: url("wallpaper2.jpg") center;}
-.editBody { background-image: url("wallpaper3.jpg") center;}
-.analyseBody { background-image: url("wallpaper4.jpg") center;}
+.glavniBody { background-image: url("wallpaper6.jpg");}
+.loginBody { background-image: url("wallpaper1.jpg");}
+.mydataBody { background-image: url("wallpaper2.jpg");}
+.editBody { background-image: url("wallpaper3.jpg");}
+.analyseBody { background-image: url("wallpaper4.jpg");}
 
 
 
