@@ -7,12 +7,57 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	 <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu_UWMFWMF2ZMmdtJG0NznGU8IRYo54PE"></script>
     <script src="jea.js"></script>
 
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          zoom: 12
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+        if(navigator.geolocation) {
+  		  	navigator.geolocation.getCurrentPosition(function(position) {
+     	   		var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      			var infowindow = new google.maps.InfoWindow({
+       	 			map: map,
+        			position: pos,
+        			content: 'You are here'
+      			});
+      			map.setCenter(pos);
+    		}, function() {
+      		handleNoGeolocation(true);
+    		});
+  		} 
+  		else {
+    	// Browser doesn't support Geolocation
+    	handleNoGeolocation(false);
+  		}
+
+      }
+
+    function handleNoGeolocation(errorFlag) {
+  		if (errorFlag) {
+    		var content = 'Error: The Geolocation service failed.';
+  		} 
+  		else {
+    		var content = 'Error: Your browser doesn\'t support geolocation.';
+  		}
+  		var options = {
+    		map: map,
+    		position: new google.maps.LatLng(60, 105),
+    		content: content
+  		};
+  		var infowindow = new google.maps.InfoWindow(options);
+  		map.setCenter(options.position);
+	}
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
 </head>
 
-<body>
+<body class="glavniBody">
     <div class="navbar navbar-inverse navbar-static-top">
     	<div class="container">
     		<div class="navbar-header">
@@ -47,12 +92,14 @@
 
     <div class="container">
     	<div class="row">
-    		<div class="col-md-6">
-    			<div class="jumbotron" id="spodnji">
-    				<h3>Geolocation</h3>
-    				<a href="mapa.html">Mapa</div>
-    			</div>
-    			
+	    	<div class="col-md-6" id="notranji">
+	    		<div class="jumbotron">
+	    			<h2>Dont worry anymore !</h3>
+	    			<p> put a lot of effort to build this app just for you. MyHealth is one of the fastest growing companies on this planet. Just login and be part of the greatest community for health care.</p>
+	    		</div>
+    		</div>
+    		<div class="col-md-6" id="mapa">
+    			<div class="google-map-canvas" id="map-canvas">-</div>
     		</div>
     	</div>
     </div>

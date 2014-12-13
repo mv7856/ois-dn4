@@ -2,11 +2,36 @@
 	opacity: 0.93;
 }
 
-#spodnji{
-	opacity: 0.96;
-	background: #C3C3C2
+#notranji {
+	opacity: 0.70;
 }
 
 body {
-	margin-bottom: 100px;
+	margin-bottom: 30px;
+	-webkit-background-size: auto 100%;
+	-moz-background-size: auto 100%;
+	-ms-background-size: auto 100%;
+	-o-background-size: auto 100%;
+	background-size: cover;
+ 	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	display: compact;
+	
 }
+
+.glavniBody { background-image: url("wallpaper6.jpg");}
+.loginBody { background-image: url("wallpaper1.jpg");}
+.mydataBody { background-image: url("wallpaper2.jpg");}
+.editBody { background-image: url("wallpaper3.jpg");}
+.analyseBody { background-image: url("wallpaper4.jpg");}
+
+
+
+#map-canvas { 
+	height:	500px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, .row, #mapa,.container{ height: 100% }
