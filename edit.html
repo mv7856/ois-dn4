@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>EHRaplikacija</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,11 +35,67 @@
   		</div>
     </div>
 
-     <div class="navbar navbar-default navbar-fixed-bottom">
-    	<div class="container">
-    		<p class="navbar-text pull-left">Site built by @myHealth</p>
-    		<a href="https://www.facebook.com/sharer/sharer.php?app_id=309437425817038&u=http%3A%2F%2Fmv7856.github.io%2Fois-dn4%2F&display=popup&ref=plugin" target="_blank" class="navbar-btn btn-primary btn pull-right">Share on facebook</a>
-    	</div>
-    </div>
+  	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-md-8"><h2>Health data</h2></div>
+					<div class="col-md-4"><select class="form-control" id="formHealthInput"><option value=""></option><option value="42ba4ea3-3359-4af9-af4c-83e315fde4e6,12,2013,187,86,36.4,120,95,99,myHealth">Jesus Christus</option><option value="043d0649-0294-4089-9580-529ee695dfe2,11,2014,168,95,40.8,130,99,100,myHealth">Nona z motiko</option><option value="51b7ea37-aa36-490a-9aef-1dcf08b9a51b,1,2014,184,66,36.7,117,89,96,myHealth">Adriana Lima</option></select></div>
+				</div>
+			</div>				
+			<div class="panel-body">
+						<span class="label label-default">EHR ID</span>
+							<input id="addId" type="text" class="form-control" placeholder="393d1e06-81e7-456a-a8e8-5fafe4a02d68">
+						<span class="label label-default">Date and time</span>
+								<div class="row">
+	        						<div class="col-md-3">
+	        							<input id="dan1" type="text" class="form-control input-mini" placeholder="2">
+	        							
+	        						</div>
+	        						<div class="col-md-6">
+	        							<select class="form-control" id="mesec1"><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>
+	        							</select>
+	        						</div>
+	        						<div class="col-md-3">
+	        							<input id="leto1" type="text" class="form-control input-mini" placeholder="1995">
+	        						</div>
+	        					</div>
+						<span class="label label-default">Height</span>
+						<div class="input-group">
+							<input id="addHeight" type="text" class="form-control" placeholder="185">
+							<span class="input-group-addon">cm</span>
+						</div>
+						<span class="label label-default">Weigth</span>
+						<div class="input-group">
+							<input id="addWeigth" type="text" class="form-control" placeholder="80.00">
+							<span class="input-group-addon">kg</span>
+						</div>
+						<span class="label label-default">Body temperature</span>
+						<div class="input-group">
+							<input id="addTemperature" type="text" class="form-control" placeholder="36.50">
+							<span class="input-group-addon">°C</span>
+						</div>
+						<span class="label label-default">Systolic blood pressure</span>
+						<div class="input-group">
+							<input id="addSystolic" type="text" class="form-control" placeholder="118">
+							<span class="input-group-addon">mm Hg</span>
+						</div>
+						<span class="label label-default">Diastolic blood pressure</span>
+						<div class="input-group">
+							<input id="addDiastolic" type="text" class="form-control" placeholder="92">
+							<span class="input-group-addon">mm Hg</span>
+						</div>
+						<span class="label label-default">Blood oxigen</span>
+						<div class="input-group">
+							<input id="addOxigen" type="text" class="form-control" placeholder="98">
+							<span class="input-group-addon">%</span>
+						</div>
+						<span class="label label-default">Commiter</span>
+							<input id="addCommiter" type="text" class="form-control" placeholder="myHealth">
+						<button type="button" class="btn btn-primary btn" onclick="addHealthData()">Add health data</button>
+				  	</div>
+		</div>
+	</div>	
+
 </body>
 </html>

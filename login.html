@@ -3,12 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>EHRaplikacija</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="jea.js"></script>
+    
 
 </head>
 <body class="loginBody">
@@ -34,6 +35,58 @@
 	  		
   		</div>
     </div>
+
+    <div class="container" id="box">
+		<div class="row" id="login">
+			<div class="col-md-3"></div>
+	    	<div class="col-md-6">
+	    		<div class="panel panel-default">
+	    			<div class="panel-heading">
+	    				<h2 align="center">Log in</h2>
+	    			</div>
+	    			<div class="panel-body">
+	    				<span class="label label-default">First name</span><input id="createName" type="text" class="form-control input-mini" placeholder="John">
+	    				<span class="label label-default">Second name</span><input id="createSecondName" type="text" class="form-control input-mini" placeholder="Smith">
+	    				<span class="label label-default">E-mail</span><input id="createEmail" type="text" class="form-control input-mini" placeholder="john.smith@yahoo.com">
+	    				<span class="label label-default" margin-botom="5px">Date of birth</span>
+       					<div class="row">
+       						<div class="col-md-8">
+	        					<div class="row">
+	        						<div class="col-md-3">
+	        							<input id="dan" type="text" class="form-control input-mini" placeholder="2">
+	        							
+	        						</div>
+	        						<div class="col-md-6">
+	        							<select class="form-control" id="mesec"><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>
+	        							</select>
+	        						</div>
+	        						<div class="col-md-3">
+	        							<input id="leto" type="text" class="form-control input-mini" placeholder="1995">
+	        						</div>
+	        					</div>
+					        </div>
+        					<div class="col-md-2">
+        						<div class="radio">
+      								<label><input type="radio" name="optradio" id="male">Male</label>
+      							</div>
+      						</div>
+      						<div class="col-md-2">
+        						<div class="radio">
+      								<label><input type="radio" name="optradio" id="female">Female</label>
+    							</div>
+        					</div>
+    					</div>
+	    				<div class="text-center">
+	    					<button type="button" class="navbar-btn btn-danger btn" onclick="createEhr()">Sign in</button>
+	    					<button class="btn btn-primary btn" onclick="generate()">Generate</button>
+	    					<span id="messages"></span>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div class="col-md-3"></div>
+		</div>
+	</div>
 
      <div class="navbar navbar-default navbar-fixed-bottom">
     	<div class="container">

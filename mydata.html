@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>EHRaplikacija</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +33,51 @@
 	  			</div>
 	  		
   		</div>
+    </div>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-6">
+    			<div class="panel panel-default">
+    				<div class="panel-heading">
+    					<div class="row">
+							<div class="col-md-8"><b>Read EHR</b></div>
+							<div class="col-md-4">
+								<select class="form-control input-sm" id="readEhrForm">
+									<option value=""></option>
+									<option value="42ba4ea3-3359-4af9-af4c-83e315fde4e6">Jesus Christus</option>
+									<option value="043d0649-0294-4089-9580-529ee695dfe2">Nona z motiko</option>
+									<option value="51b7ea37-aa36-490a-9aef-1dcf08b9a51b">Adriana Lima</option>
+								</select>
+							</div>
+						</div>
+    				</div>
+    				<div class="panel-body">
+    					<span class="label label-default">EHR ID</span>
+    					<input id="readEhrId" type="text" class="form-control" placeholder="393d1e06-81e7-456a-a8e8-5fafe4a02d68">
+						<button type="button" class="btn btn-primary btn" onclick="readEhr()">Get your data</button>
+						<div class="row" id="readEhrResponse"></div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-6">
+    			<div class="panel panel-default">
+    				<div class="panel-heading">
+
+    					<div class="row">
+    						<div class="col-md-1"></div>
+    						<div class="col-md-9">
+    							<b>How to live longer</b>
+    						</div>
+
+    					</div>
+    				</div>
+    				<div class="panel-body">
+    					<p>Live healthy, live longer. Making just a few changes in your lifestyle can help you live longer. A recent study found that four bad behaviors—smoking, drinking too much alcohol, not exercising, and not eating enough fruits and veggies—can hustle you into an early grave, and, in effect, age you by as many as 12 years. Fortunately, you can do something to correct these and other unhealthy behaviors. Adopt the following nine habits to keep your body looking and feeling young..</p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
     </div>
 
      <div class="navbar navbar-default navbar-fixed-bottom">

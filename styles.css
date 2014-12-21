@@ -6,6 +6,12 @@
 	opacity: 0.70;
 }
 
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
 body {
 	margin-bottom: 30px;
 	-webkit-background-size: cover;
@@ -21,7 +27,7 @@ body {
 
 .glavniBody { background-image: url("wallpaper6.jpg");}
 .loginBody { background-image: url("wallpaper1.jpg");}
-.mydataBody { background-image: url("wallpaper2.jpg");}
+.mydataBody { background-image: url("wallpaper5.jpg");}
 .editBody { background-image: url("wallpaper3.jpg");}
 .analyseBody { background-image: url("wallpaper4.jpg");}
 
@@ -35,3 +41,24 @@ body {
 }
 
 html, body, .row, #mapa,.container{ height: 100% }
+
+#graf {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
